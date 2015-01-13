@@ -10,5 +10,6 @@
 #define MacApp_GTM_Bridging_Header_h
 
 #import "GTMOAuth2WindowController.h"
+#import "GTLYoutube.h"
 
 #endif
