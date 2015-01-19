@@ -11,5 +11,6 @@
 
 #import "GTMOAuth2WindowController.h"
 #import "GTLYoutube.h"
+#import "XCDYouTubeKit/XCDYouTubeKit.h"
 
 #endif
