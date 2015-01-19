@@ -20,7 +20,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     var playlistId: String = ""
     var wlList = [GTLYouTubePlaylistItem]()
-    var videos = [GTLYouTubeVideo]()
+    // var videos = [GTLYouTubeVideo]()
+    var videos = [XCDYouTubeVideo]()
     var videoItems = [VideoContent]()
     
     var service: GTLServiceYouTube? {
@@ -103,19 +104,20 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         return NSImage(contentsOfURL: url)
     }
     
-//    private func fetchXCDVideo(id: String) {
-//        var client = XCDYouTubeClient()
-//        
-//        client.getVideoWithIdentifier(id, completionHandler: {
-//            (video: XCDYouTubeVideo!, error: NSError!) in
-//            if error != nil {
-//                println("fetched video:" + video.title)
-//                self.videos.append(video)
-//            } else {
-//                println(error)
-//            }
-//        })
-//    }
+    private func fetchXCDVideo(id: String) {
+        var client = XCDYouTubeClient()
+        print("fetching " + id)
+        
+        client.getVideoWithIdentifier(id, completionHandler: {
+            (video: XCDYouTubeVideo!, error: NSError!) in
+            if error != nil {
+                println("fetched video:" + video.title)
+                self.videos.append(video)
+            } else {
+                println(error)
+            }
+        })
+    }
     
     //! deprecated.
     private func fetchVideo(id: String) {
@@ -168,7 +170,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 for var index = 0; index < response.items().count; index++ {
                     var listItem = response.items()[index] as GTLYouTubePlaylistItem
                     self.wlList.append(listItem)
-                    self.fetchVideo(listItem.contentDetails.videoId)
+                    self.fetchXCDVideo(listItem.contentDetails.videoId)
+//                    self.fetchVideo(listItem.contentDetails.videoId)
                 }
             }
         })

@@ -10,7 +10,7 @@ import Cocoa
 
 class VideoCellView: NSTableCellView {
     var html: String = "Undefined embedhtml"
-    //var video: XCDYouTubeVideo?
+    var video: XCDYouTubeVideo?
     
     @IBOutlet weak var iconView: NSImageView!
     @IBOutlet weak var labelView: NSTextField!
