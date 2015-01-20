@@ -19,8 +19,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     @IBOutlet weak var tableView: NSTableView!
     
     var playlistId: String = ""
-    var wlList = [GTLYouTubePlaylistItem]()
-    // var videos = [GTLYouTubeVideo]()
     var videos = [XCDYouTubeVideo]()
     var videoItems = [VideoContent]()
     
@@ -48,10 +46,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         // Do any additional setup after loading the view.
         self.userInfoButton.transparent = true
         self.auth = GTMOAuth2WindowController.authForGoogleFromKeychainForName("WatchLaterDownloader", clientID: CLIENT_ID, clientSecret: CLIENT_SECRET)
-        
-        if let savedAuth = self.auth {
-            println("Using saved auth:" + savedAuth.description)
-        }
     }
 
     override var representedObject: AnyObject? {
@@ -90,7 +84,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             var view = tableView.makeViewWithIdentifier(column.identifier, owner: self) as? VideoCellView
             view?.labelView.stringValue = self.videoItems[row].title
             view?.iconView.image = self.videoItems[row].thumbNail
-            view?.html = self.videoItems[row].embedHtml
+            view?.video = self.videos[row]
             return view
         }
         return nil
@@ -106,52 +100,27 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     private func fetchXCDVideo(id: String) {
         var client = XCDYouTubeClient()
-        print("fetching " + id)
+        println("fetching " + id)
         
-        client.getVideoWithIdentifier(id, completionHandler: {
+        var operation = client.getVideoWithIdentifier(id, completionHandler: {
             (video: XCDYouTubeVideo!, error: NSError!) in
-            if error != nil {
+            if error == nil {
                 println("fetched video:" + video.title)
                 self.videos.append(video)
+                var videoItem = VideoContent(id: id)
+                videoItem.title = video.title
+                videoItem.thumbNail = NSImage(contentsOfURL: video.mediumThumbnailURL)
+                videoItem.embedHtml = video.streamURLs.description
+                self.videoItems.append(videoItem)
+                self.tableView.reloadData()
             } else {
                 println(error)
             }
-        })
-    }
-    
-    //! deprecated.
-    private func fetchVideo(id: String) {
-        var query = GTLQueryYouTube.queryForVideosListWithPart("snippet, player") as GTLQueryYouTube
-        query.identifier = id
-        
-        var ticket = self.service!.executeQuery(query, completionHandler: {
-            (ticket: GTLServiceTicket!, data: AnyObject!, error: NSError!) in
-            if error != nil {
-                println(error)
-            } else {
-                var response = data as GTLYouTubeVideoListResponse
-                if response.items().count > 0 {
-                    var video = response.items()[0] as GTLYouTubeVideo
-                    var videoItem = VideoContent(id: id)
-                    
-                    videoItem.title = video.snippet.title
-                    videoItem.embedHtml = video.player.embedHtml
-                    
-                    if let url = NSURL(string: video.snippet.thumbnails.medium.url) {
-                        videoItem.thumbNail = self.fetchImage(url)
-                    }
-                    
-                    //self.videos.append(video)
-                    self.videoItems.append(videoItem)
-                    self.tableView.reloadData()
-                }
-            }
-        })
+        }) as XCDYouTubeVideoOperation
     }
 
     private func fetchListItem() {
         var query = GTLQueryYouTube.queryForPlaylistItemsListWithPart("contentDetails") as GTLQueryYouTube
-        // set playlistid property
         query.playlistId = self.playlistId
         query.maxResults = 50
         
@@ -162,16 +131,12 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             }
             else {
                 var response = data as GTLYouTubePlaylistItemListResponse
-                
-                self.wlList.removeAll(keepCapacity: false)
                 self.videos.removeAll(keepCapacity: false)
                 self.videoItems.removeAll(keepCapacity: false)
                 
                 for var index = 0; index < response.items().count; index++ {
                     var listItem = response.items()[index] as GTLYouTubePlaylistItem
-                    self.wlList.append(listItem)
                     self.fetchXCDVideo(listItem.contentDetails.videoId)
-//                    self.fetchVideo(listItem.contentDetails.videoId)
                 }
             }
         })

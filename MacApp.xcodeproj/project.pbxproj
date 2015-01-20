@@ -15,6 +15,7 @@
 		3A7260111A67661B00B38A37 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7260101A67661B00B38A37 /* models.swift */; };
 		3A7766111A6D013300155346 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7766101A6D013300155346 /* JavaScriptCore.framework */; };
 		3A7766251A6D2FAA00155346 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7766241A6D2FAA00155346 /* XCDYouTubeKit.framework */; };
+		3A7766271A6D43CE00155346 /* GTMOAuth2Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7766261A6D43CE00155346 /* GTMOAuth2Window.xib */; };
 		3A94B1AA1A5D1FF700807E25 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A94B1A91A5D1FF700807E25 /* Security.framework */; };
 		3A94B1AC1A5D200300807E25 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A94B1AB1A5D200300807E25 /* SystemConfiguration.framework */; };
 		3ABF17871A1486DA00F1C27D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF17861A1486DA00F1C27D /* AppDelegate.swift */; };
@@ -42,7 +43,8 @@
 		3A72600E1A66467600B38A37 /* VideoCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCellView.swift; sourceTree = "<group>"; };
 		3A7260101A67661B00B38A37 /* models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
 		3A7766101A6D013300155346 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		3A7766241A6D2FAA00155346 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = ../XCDYouTubeKit/build/Debug/XCDYouTubeKit.framework; sourceTree = "<group>"; };
+		3A7766241A6D2FAA00155346 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = ../../XCDYouTubeKit/build/Debug/XCDYouTubeKit.framework; sourceTree = "<group>"; };
+		3A7766261A6D43CE00155346 /* GTMOAuth2Window.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2Window.xib; path = "../../google-api-objectivec-client/Source/OAuth2/Mac/GTMOAuth2Window.xib"; sourceTree = "<group>"; };
 		3A94B1A91A5D1FF700807E25 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3A94B1AB1A5D200300807E25 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3A94B1AD1A5D275C00807E25 /* GTM-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTM-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -62,11 +64,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A7766251A6D2FAA00155346 /* XCDYouTubeKit.framework in Frameworks */,
 				3A0F098E1A5E2912004ABA2A /* WebKit.framework in Frameworks */,
 				3A94B1AC1A5D200300807E25 /* SystemConfiguration.framework in Frameworks */,
 				3A94B1AA1A5D1FF700807E25 /* Security.framework in Frameworks */,
 				3A7766111A6D013300155346 /* JavaScriptCore.framework in Frameworks */,
+				3A7766251A6D2FAA00155346 /* XCDYouTubeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +85,6 @@
 		3ABF17781A1486DA00F1C27D = {
 			isa = PBXGroup;
 			children = (
-				3A7766241A6D2FAA00155346 /* XCDYouTubeKit.framework */,
 				3ABF17831A1486DA00F1C27D /* MacApp */,
 				3ABF17961A1486DA00F1C27D /* MacAppTests */,
 				3ABF17821A1486DA00F1C27D /* Products */,
@@ -120,6 +121,8 @@
 		3ABF17841A1486DA00F1C27D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3A7766261A6D43CE00155346 /* GTMOAuth2Window.xib */,
+				3A7766241A6D2FAA00155346 /* XCDYouTubeKit.framework */,
 				3A7766101A6D013300155346 /* JavaScriptCore.framework */,
 				3A0F098D1A5E2912004ABA2A /* WebKit.framework */,
 				3A94B1AB1A5D200300807E25 /* SystemConfiguration.framework */,
@@ -228,6 +231,7 @@
 			files = (
 				3ABF178B1A1486DA00F1C27D /* Images.xcassets in Resources */,
 				3ABF178E1A1486DA00F1C27D /* Main.storyboard in Resources */,
+				3A7766271A6D43CE00155346 /* GTMOAuth2Window.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
