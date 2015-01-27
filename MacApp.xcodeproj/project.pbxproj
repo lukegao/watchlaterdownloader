@@ -11,6 +11,8 @@
 		3A0F0B411A63B883004ABA2A /* GTLCommon_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F0B3F1A63B883004ABA2A /* GTLCommon_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3A0F0B421A63B883004ABA2A /* GTLNetworking_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F0B401A63B883004ABA2A /* GTLNetworking_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3A0F0B441A63BA5B004ABA2A /* GTLYouTube_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F0B431A63BA5B004ABA2A /* GTLYouTube_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3A4B47251A70A13300A4EB05 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4B47241A70A13300A4EB05 /* QuartzCore.framework */; };
+		3A4B47271A70A1B200A4EB05 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B47261A70A1B200A4EB05 /* ProgressCircleView.swift */; };
 		3A72600F1A66467600B38A37 /* VideoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72600E1A66467600B38A37 /* VideoCellView.swift */; };
 		3A7260111A67661B00B38A37 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7260101A67661B00B38A37 /* models.swift */; };
 		3A7766111A6D013300155346 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7766101A6D013300155346 /* JavaScriptCore.framework */; };
@@ -40,6 +42,8 @@
 		3A0F0B3F1A63B883004ABA2A /* GTLCommon_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLCommon_Sources.m; sourceTree = "<group>"; };
 		3A0F0B401A63B883004ABA2A /* GTLNetworking_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLNetworking_Sources.m; sourceTree = "<group>"; };
 		3A0F0B431A63BA5B004ABA2A /* GTLYouTube_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLYouTube_Sources.m; sourceTree = "<group>"; };
+		3A4B47241A70A13300A4EB05 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3A4B47261A70A1B200A4EB05 /* ProgressCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		3A72600E1A66467600B38A37 /* VideoCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCellView.swift; sourceTree = "<group>"; };
 		3A7260101A67661B00B38A37 /* models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
 		3A7766101A6D013300155346 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4B47251A70A13300A4EB05 /* QuartzCore.framework in Frameworks */,
 				3A0F098E1A5E2912004ABA2A /* WebKit.framework in Frameworks */,
 				3A94B1AC1A5D200300807E25 /* SystemConfiguration.framework in Frameworks */,
 				3A94B1AA1A5D1FF700807E25 /* Security.framework in Frameworks */,
@@ -114,6 +119,7 @@
 				3A94B1AD1A5D275C00807E25 /* GTM-Bridging-Header.h */,
 				3A72600E1A66467600B38A37 /* VideoCellView.swift */,
 				3A7260101A67661B00B38A37 /* models.swift */,
+				3A4B47261A70A1B200A4EB05 /* ProgressCircleView.swift */,
 			);
 			path = MacApp;
 			sourceTree = "<group>";
@@ -122,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7766261A6D43CE00155346 /* GTMOAuth2Window.xib */,
+				3A4B47241A70A13300A4EB05 /* QuartzCore.framework */,
 				3A7766241A6D2FAA00155346 /* XCDYouTubeKit.framework */,
 				3A7766101A6D013300155346 /* JavaScriptCore.framework */,
 				3A0F098D1A5E2912004ABA2A /* WebKit.framework */,
@@ -254,6 +261,7 @@
 				3ABF17891A1486DA00F1C27D /* ViewController.swift in Sources */,
 				3A72600F1A66467600B38A37 /* VideoCellView.swift in Sources */,
 				3A0F0B441A63BA5B004ABA2A /* GTLYouTube_Sources.m in Sources */,
+				3A4B47271A70A1B200A4EB05 /* ProgressCircleView.swift in Sources */,
 				3A0F0B421A63B883004ABA2A /* GTLNetworking_Sources.m in Sources */,
 				3ABF17871A1486DA00F1C27D /* AppDelegate.swift in Sources */,
 			);
@@ -374,7 +382,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GTL-bdzhpeuoebcstkfoyhbvyfodgrpc/Build/Products/Debug",
-					/Users/lukgreg/Projects/XCDYouTubeKit/build/Debug,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -390,10 +397,7 @@
 				);
 				INFOPLIST_FILE = MacApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/lukgreg/Projects/XCDYouTubeKit/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = "";
 				OTHER_CFLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = "-Objc";
@@ -410,7 +414,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GTL-bdzhpeuoebcstkfoyhbvyfodgrpc/Build/Products/Debug",
-					/Users/lukgreg/Projects/XCDYouTubeKit/build/Debug,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -426,10 +429,7 @@
 				);
 				INFOPLIST_FILE = MacApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/lukgreg/Projects/XCDYouTubeKit/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = "";
 				OTHER_CFLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = "-Objc";

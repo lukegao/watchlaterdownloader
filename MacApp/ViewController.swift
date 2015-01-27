@@ -17,6 +17,7 @@ let YOUTUBE_SCOPE = "https://www.googleapis.com/auth/youtube"
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     @IBOutlet weak var userInfoButton: NSButton!
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var progressView: ProgressCircleView!
     
     var playlistId: String = ""
     var videos = [XCDYouTubeVideo]()
@@ -47,14 +48,11 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         self.userInfoButton.transparent = true
         self.auth = GTMOAuth2WindowController.authForGoogleFromKeychainForName("WatchLaterDownloader", clientID: CLIENT_ID, clientSecret: CLIENT_SECRET)
     }
-
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
     
     @IBAction func showUserInfo(sender: NSButton) {
+        var fm = NSFileManager.defaultManager()
+        println(fm.currentDirectoryPath)
+        println(fm.URLsForDirectory(NSSearchPathDirectory.DownloadsDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask))
     }
     
     @IBAction func oauthGTM(sender: NSButton) {
@@ -73,6 +71,11 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         GTMOAuth2WindowController.removeAuthFromKeychainForName("WatchLaterDownloader")
         GTMOAuth2WindowController.revokeTokenForGoogleAuthentication(self.auth)
         self.auth = nil
+    }
+    
+    @IBAction func debugProgress(sender: NSButton) {
+        self.progressView.currentLength += 5
+        println("current length value is \(self.progressView.currentLength)")
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
