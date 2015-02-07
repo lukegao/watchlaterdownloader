@@ -19,7 +19,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var progressView: ProgressCircleView!
     
-    var playlistId: String = ""
+    var playlistId: String!
+    
     var videos = [XCDYouTubeVideo]()
     var videoItems = [VideoContent]()
     
@@ -50,9 +51,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     }
     
     @IBAction func showUserInfo(sender: NSButton) {
-        var fm = NSFileManager.defaultManager()
-        println(fm.currentDirectoryPath)
-        println(fm.URLsForDirectory(NSSearchPathDirectory.DownloadsDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask))
+        
     }
     
     @IBAction func oauthGTM(sender: NSButton) {
@@ -85,16 +84,17 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         if let column = tableColumn {
             var view = tableView.makeViewWithIdentifier(column.identifier, owner: self) as? VideoCellView
-            view?.labelView.stringValue = self.videoItems[row].title
-            view?.iconView.image = self.videoItems[row].thumbNail
+            view?.titleView.stringValue = self.videoItems[row].title
+            view?.thumnailView.image = self.videoItems[row].thumbNail
             view?.video = self.videos[row]
+            view?.backgroundStyle = NSBackgroundStyle.Light
             return view
         }
         return nil
     }
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 60.0
+        return 64.0
     }
     
     private func fetchImage(url: NSURL) -> NSImage? {
@@ -103,7 +103,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     private func fetchXCDVideo(id: String) {
         var client = XCDYouTubeClient()
-        println("fetching " + id)
         
         var operation = client.getVideoWithIdentifier(id, completionHandler: {
             (video: XCDYouTubeVideo!, error: NSError!) in
@@ -112,12 +111,12 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 self.videos.append(video)
                 var videoItem = VideoContent(id: id)
                 videoItem.title = video.title
-                videoItem.thumbNail = NSImage(contentsOfURL: video.mediumThumbnailURL)
+                videoItem.thumbNail = NSImage(byReferencingURL: video.mediumThumbnailURL)
                 videoItem.embedHtml = video.streamURLs.description
                 self.videoItems.append(videoItem)
                 self.tableView.reloadData()
             } else {
-                println(error)
+                println(error.localizedDescription)
             }
         }) as XCDYouTubeVideoOperation
     }

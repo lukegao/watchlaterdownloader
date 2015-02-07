@@ -8,24 +8,36 @@
 
 import Cocoa
 
-class VideoCellView: NSTableCellView, NSURLDownloadDelegate {
-    var video: XCDYouTubeVideo?
+class VideoCellView: NSTableCellView {
+    var video: XCDYouTubeVideo!
     var contentLength: Int64 = 0
+    var currentLength: Int64 = 0
     
-    @IBOutlet weak var iconView: NSImageView!
-    @IBOutlet weak var labelView: NSTextField!
+    var download: NSURLDownload!
+    var isDownloading: Bool = false
+    var localUrl: NSURL!
+    
+    @IBOutlet weak var thumnailView: NSImageView!
+    @IBOutlet weak var titleView: NSTextField!
+    @IBOutlet weak var progressBar: NSProgressIndicator!
+    @IBOutlet weak var downloadButton: NSButton!
     
     @IBAction func playVideo(sender: NSButton) {
+        if isDownloading {
+            println("trying to cancel current downloading...")
+            download.cancel()
+            isDownloading = false
+            return
+        }
+        
         if let video = self.video {
             var sdVideo = video.streamURLs[18] as NSURL?
             var hdVideo = video.streamURLs[22] as NSURL?
             
             if hdVideo != nil {
-                var req = NSURLRequest(URL: hdVideo!)
-                var download = NSURLDownload(request: req, delegate: self)
+                startDownload(hdVideo)
             } else if sdVideo != nil {
-                var req = NSURLRequest(URL: sdVideo!)
-                var download = NSURLDownload(request: req, delegate: self)
+                startDownload(sdVideo)
             } else {
                 println("no mp4 video")
             }
@@ -35,33 +47,52 @@ class VideoCellView: NSTableCellView, NSURLDownloadDelegate {
         }
     }
     
+    private func startAFDownload(url: NSURL!) {
+        var req = NSURLRequest(URL: url)
+        var manager = AFHTTPSessionManager(sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        var task = manager.downloadTaskWithRequest(req, progress: nil, destination: {
+            (url: NSURL!, response: NSURLResponse!) in
+            var targetUrl = url.URLByAppendingPathComponent(response.suggestedFilename!)
+            return targetUrl
+            }, completionHandler: {
+                (response: NSURLResponse!, url: NSURL!, error: NSError!) in
+                if error != nil {
+                    println(error.description)
+                }
+        })
+        task.resume()
+    }
+    
+    private func startDownload(url: NSURL!) {
+        let req = NSURLRequest(URL: url)
+        download = NSURLDownload(request: req, delegate: self)
+        progressBar.doubleValue = 0.0
+    }
+}
+
+extension VideoCellView: NSURLDownloadDelegate {
+
     func downloadDidBegin(download: NSURLDownload) {
-        if let video = self.video {
-            println(video.title + " begin downloading.")
-        }
+        isDownloading = true
     }
     
     func download(download: NSURLDownload, didFailWithError error: NSError) {
+        isDownloading = false
         println("download failed with error code \(error.code)")
     }
     
     func download(download: NSURLDownload, didReceiveResponse response: NSURLResponse) {
-        self.contentLength = response.expectedContentLength
+        contentLength = response.expectedContentLength
+        if let url = DownloadDirectory {
+            localUrl = url.URLByAppendingPathComponent(video.title + ".mp4")
+            download.setDestination(localUrl.path!, allowOverwrite: false)
+        }
         println("expected content length: \(response.expectedContentLength)")
     }
     
     func download(download: NSURLDownload, didReceiveDataOfLength length: Int) {
-        println("downloaded size: \(length) of \(self.contentLength)...")
-    }
-    
-    func download(download: NSURLDownload, decideDestinationWithSuggestedFilename filename: String) {
-        if var downloadURL = NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.DownloadsDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create: false, error: nil) as NSURL? {
-            downloadURL.URLByAppendingPathComponent(filename)
-            if (downloadURL.path != nil) {
-                download.setDestination(downloadURL.path!, allowOverwrite: false)
-                println("Download location set to \(downloadURL.path!)")
-            }
-        }
+        currentLength += length
+        progressBar.doubleValue = (Double(currentLength) / Double(contentLength)) * 100.0
     }
     
     func downloadDidFinish(download: NSURLDownload) {

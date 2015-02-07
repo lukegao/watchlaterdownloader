@@ -32,9 +32,9 @@ class ProgressCircleView: NSView {
             progressLayer.strokeEnd = CGFloat(currentLength) / CGFloat(totalLength)
         }
         
-//        if textLayer != nil {
-//            textLayer.string = "\(progressLayer.strokeEnd * 100)%"
-//        }
+        if textLayer != nil {
+            textLayer.string = "\(progressLayer.strokeEnd * 100)%"
+        }
     }
     
     override var wantsUpdateLayer: Bool {
@@ -71,13 +71,13 @@ class ProgressCircleView: NSView {
         }
         progressLayer.frame = bounds
         
-//        if textLayer == nil {
-//            textLayer = CATextLayer()
-//            layer?.addSublayer(textLayer)
-//            textLayer.alignmentMode = kCAAlignmentCenter
-//            textLayer.foregroundColor = NSColor.blackColor().CGColor
-//        }
-//        textLayer.frame = CGRectInset(bounds, lineWidth, bounds.height/3)
+        if textLayer == nil {
+            textLayer = CATextLayer()
+            layer?.addSublayer(textLayer)
+            textLayer.alignmentMode = kCAAlignmentCenter
+            textLayer.foregroundColor = NSColor.blackColor().CGColor
+        }
+        textLayer.frame = CGRectInset(bounds, lineWidth, bounds.height/3)
         updateProgress()
     }
 }

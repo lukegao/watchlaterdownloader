@@ -13,11 +13,20 @@
 		3A0F0B441A63BA5B004ABA2A /* GTLYouTube_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F0B431A63BA5B004ABA2A /* GTLYouTube_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3A4B47251A70A13300A4EB05 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4B47241A70A13300A4EB05 /* QuartzCore.framework */; };
 		3A4B47271A70A1B200A4EB05 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B47261A70A1B200A4EB05 /* ProgressCircleView.swift */; };
+		3A5CF88C1A7B573F00D5B45C /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF8681A7B573F00D5B45C /* AFHTTPRequestOperation.m */; };
+		3A5CF88D1A7B573F00D5B45C /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF86A1A7B573F00D5B45C /* AFHTTPRequestOperationManager.m */; };
+		3A5CF88E1A7B573F00D5B45C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF86C1A7B573F00D5B45C /* AFHTTPSessionManager.m */; };
+		3A5CF88F1A7B573F00D5B45C /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF86F1A7B573F00D5B45C /* AFNetworkReachabilityManager.m */; };
+		3A5CF8901A7B573F00D5B45C /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF8711A7B573F00D5B45C /* AFSecurityPolicy.m */; };
+		3A5CF8911A7B573F00D5B45C /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF8731A7B573F00D5B45C /* AFURLConnectionOperation.m */; };
+		3A5CF8921A7B573F00D5B45C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF8751A7B573F00D5B45C /* AFURLRequestSerialization.m */; };
+		3A5CF8931A7B573F00D5B45C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF8771A7B573F00D5B45C /* AFURLResponseSerialization.m */; };
+		3A5CF8941A7B573F00D5B45C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CF8791A7B573F00D5B45C /* AFURLSessionManager.m */; };
 		3A72600F1A66467600B38A37 /* VideoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72600E1A66467600B38A37 /* VideoCellView.swift */; };
 		3A7260111A67661B00B38A37 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7260101A67661B00B38A37 /* models.swift */; };
 		3A7766111A6D013300155346 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7766101A6D013300155346 /* JavaScriptCore.framework */; };
-		3A7766251A6D2FAA00155346 /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7766241A6D2FAA00155346 /* XCDYouTubeKit.framework */; };
 		3A7766271A6D43CE00155346 /* GTMOAuth2Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7766261A6D43CE00155346 /* GTMOAuth2Window.xib */; };
+		3A7ECF2C1A7B32280058CE9E /* XCDYouTubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7ECF271A7B31D80058CE9E /* XCDYouTubeKit.framework */; };
 		3A94B1AA1A5D1FF700807E25 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A94B1A91A5D1FF700807E25 /* Security.framework */; };
 		3A94B1AC1A5D200300807E25 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A94B1AB1A5D200300807E25 /* SystemConfiguration.framework */; };
 		3ABF17871A1486DA00F1C27D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF17861A1486DA00F1C27D /* AppDelegate.swift */; };
@@ -25,9 +34,45 @@
 		3ABF178B1A1486DA00F1C27D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABF178A1A1486DA00F1C27D /* Images.xcassets */; };
 		3ABF178E1A1486DA00F1C27D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABF178C1A1486DA00F1C27D /* Main.storyboard */; };
 		3ABF179A1A1486DA00F1C27D /* MacAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABF17991A1486DA00F1C27D /* MacAppTests.swift */; };
+		3AC07E4A1A78D07200B38025 /* WLDDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC07E491A78D07200B38025 /* WLDDownloadManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3A7ECF221A7B31D80058CE9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7ECF1A1A7B31D80058CE9E /* XCDYouTubeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C2A3F2CD17F4827800AC1C3B;
+			remoteInfo = "XCDYouTubeKit iOS Static Library";
+		};
+		3A7ECF241A7B31D80058CE9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7ECF1A1A7B31D80058CE9E /* XCDYouTubeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C2F0E5731944F10E00D8EBA8;
+			remoteInfo = "XCDYouTubeKit iOS Framework";
+		};
+		3A7ECF261A7B31D80058CE9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7ECF1A1A7B31D80058CE9E /* XCDYouTubeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C262317A191D741700D23900;
+			remoteInfo = "XCDYouTubeKit OS X";
+		};
+		3A7ECF281A7B31D80058CE9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7ECF1A1A7B31D80058CE9E /* XCDYouTubeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C20F579B18817D5400EDBFB0;
+			remoteInfo = "XCDYouTubeKit iOS Tests";
+		};
+		3A7ECF2A1A7B31D80058CE9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7ECF1A1A7B31D80058CE9E /* XCDYouTubeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C2DD4DA2191FFDE100AF6F85;
+			remoteInfo = "XCDYouTubeKit OS X Tests";
+		};
 		3ABF17941A1486DA00F1C27D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3ABF17791A1486DA00F1C27D /* Project object */;
@@ -44,15 +89,35 @@
 		3A0F0B431A63BA5B004ABA2A /* GTLYouTube_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLYouTube_Sources.m; sourceTree = "<group>"; };
 		3A4B47241A70A13300A4EB05 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3A4B47261A70A1B200A4EB05 /* ProgressCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
+		3A5CF8671A7B573F00D5B45C /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		3A5CF8681A7B573F00D5B45C /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		3A5CF8691A7B573F00D5B45C /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		3A5CF86A1A7B573F00D5B45C /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		3A5CF86B1A7B573F00D5B45C /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		3A5CF86C1A7B573F00D5B45C /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		3A5CF86D1A7B573F00D5B45C /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		3A5CF86E1A7B573F00D5B45C /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		3A5CF86F1A7B573F00D5B45C /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		3A5CF8701A7B573F00D5B45C /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		3A5CF8711A7B573F00D5B45C /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		3A5CF8721A7B573F00D5B45C /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		3A5CF8731A7B573F00D5B45C /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		3A5CF8741A7B573F00D5B45C /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		3A5CF8751A7B573F00D5B45C /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		3A5CF8761A7B573F00D5B45C /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		3A5CF8771A7B573F00D5B45C /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		3A5CF8781A7B573F00D5B45C /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		3A5CF8791A7B573F00D5B45C /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		3A72600E1A66467600B38A37 /* VideoCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCellView.swift; sourceTree = "<group>"; };
 		3A7260101A67661B00B38A37 /* models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
 		3A7766101A6D013300155346 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		3A7766241A6D2FAA00155346 /* XCDYouTubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCDYouTubeKit.framework; path = ../../XCDYouTubeKit/build/Debug/XCDYouTubeKit.framework; sourceTree = "<group>"; };
 		3A7766261A6D43CE00155346 /* GTMOAuth2Window.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2Window.xib; path = "../../google-api-objectivec-client/Source/OAuth2/Mac/GTMOAuth2Window.xib"; sourceTree = "<group>"; };
+		3A7ECF1A1A7B31D80058CE9E /* XCDYouTubeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XCDYouTubeKit.xcodeproj; path = ../XCDYouTubeKit/XCDYouTubeKit.xcodeproj; sourceTree = "<group>"; };
 		3A94B1A91A5D1FF700807E25 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3A94B1AB1A5D200300807E25 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3A94B1AD1A5D275C00807E25 /* GTM-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTM-Bridging-Header.h"; sourceTree = "<group>"; };
-		3ABF17811A1486DA00F1C27D /* MacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ABF17811A1486DA00F1C27D /* WLDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WLDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABF17851A1486DA00F1C27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3ABF17861A1486DA00F1C27D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ABF17881A1486DA00F1C27D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +126,7 @@
 		3ABF17931A1486DA00F1C27D /* MacAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABF17981A1486DA00F1C27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3ABF17991A1486DA00F1C27D /* MacAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAppTests.swift; sourceTree = "<group>"; };
+		3AC07E491A78D07200B38025 /* WLDDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLDDownloadManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +139,7 @@
 				3A94B1AC1A5D200300807E25 /* SystemConfiguration.framework in Frameworks */,
 				3A94B1AA1A5D1FF700807E25 /* Security.framework in Frameworks */,
 				3A7766111A6D013300155346 /* JavaScriptCore.framework in Frameworks */,
-				3A7766251A6D2FAA00155346 /* XCDYouTubeKit.framework in Frameworks */,
+				3A7ECF2C1A7B32280058CE9E /* XCDYouTubeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,9 +153,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A5CF8661A7B573F00D5B45C /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				3A5CF8671A7B573F00D5B45C /* AFHTTPRequestOperation.h */,
+				3A5CF8681A7B573F00D5B45C /* AFHTTPRequestOperation.m */,
+				3A5CF8691A7B573F00D5B45C /* AFHTTPRequestOperationManager.h */,
+				3A5CF86A1A7B573F00D5B45C /* AFHTTPRequestOperationManager.m */,
+				3A5CF86B1A7B573F00D5B45C /* AFHTTPSessionManager.h */,
+				3A5CF86C1A7B573F00D5B45C /* AFHTTPSessionManager.m */,
+				3A5CF86D1A7B573F00D5B45C /* AFNetworking.h */,
+				3A5CF86E1A7B573F00D5B45C /* AFNetworkReachabilityManager.h */,
+				3A5CF86F1A7B573F00D5B45C /* AFNetworkReachabilityManager.m */,
+				3A5CF8701A7B573F00D5B45C /* AFSecurityPolicy.h */,
+				3A5CF8711A7B573F00D5B45C /* AFSecurityPolicy.m */,
+				3A5CF8721A7B573F00D5B45C /* AFURLConnectionOperation.h */,
+				3A5CF8731A7B573F00D5B45C /* AFURLConnectionOperation.m */,
+				3A5CF8741A7B573F00D5B45C /* AFURLRequestSerialization.h */,
+				3A5CF8751A7B573F00D5B45C /* AFURLRequestSerialization.m */,
+				3A5CF8761A7B573F00D5B45C /* AFURLResponseSerialization.h */,
+				3A5CF8771A7B573F00D5B45C /* AFURLResponseSerialization.m */,
+				3A5CF8781A7B573F00D5B45C /* AFURLSessionManager.h */,
+				3A5CF8791A7B573F00D5B45C /* AFURLSessionManager.m */,
+			);
+			name = AFNetworking;
+			path = ../AFNetworking;
+			sourceTree = "<group>";
+		};
+		3A7ECF1B1A7B31D80058CE9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A7ECF231A7B31D80058CE9E /* libXCDYouTubeKit.a */,
+				3A7ECF251A7B31D80058CE9E /* XCDYouTubeKit.framework */,
+				3A7ECF271A7B31D80058CE9E /* XCDYouTubeKit.framework */,
+				3A7ECF291A7B31D80058CE9E /* XCDYouTubeKit iOS Tests.xctest */,
+				3A7ECF2B1A7B31D80058CE9E /* XCDYouTubeKit OS X Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3ABF17781A1486DA00F1C27D = {
 			isa = PBXGroup;
 			children = (
+				3A7ECF1A1A7B31D80058CE9E /* XCDYouTubeKit.xcodeproj */,
 				3ABF17831A1486DA00F1C27D /* MacApp */,
 				3ABF17961A1486DA00F1C27D /* MacAppTests */,
 				3ABF17821A1486DA00F1C27D /* Products */,
@@ -99,7 +205,7 @@
 		3ABF17821A1486DA00F1C27D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3ABF17811A1486DA00F1C27D /* MacApp.app */,
+				3ABF17811A1486DA00F1C27D /* WLDownloader.app */,
 				3ABF17931A1486DA00F1C27D /* MacAppTests.xctest */,
 			);
 			name = Products;
@@ -108,6 +214,7 @@
 		3ABF17831A1486DA00F1C27D /* MacApp */ = {
 			isa = PBXGroup;
 			children = (
+				3A5CF8661A7B573F00D5B45C /* AFNetworking */,
 				3A0F0B3F1A63B883004ABA2A /* GTLCommon_Sources.m */,
 				3A0F0B431A63BA5B004ABA2A /* GTLYouTube_Sources.m */,
 				3A0F0B401A63B883004ABA2A /* GTLNetworking_Sources.m */,
@@ -120,6 +227,7 @@
 				3A72600E1A66467600B38A37 /* VideoCellView.swift */,
 				3A7260101A67661B00B38A37 /* models.swift */,
 				3A4B47261A70A1B200A4EB05 /* ProgressCircleView.swift */,
+				3AC07E491A78D07200B38025 /* WLDDownloadManager.swift */,
 			);
 			path = MacApp;
 			sourceTree = "<group>";
@@ -173,7 +281,7 @@
 			);
 			name = MacApp;
 			productName = MacApp;
-			productReference = 3ABF17811A1486DA00F1C27D /* MacApp.app */;
+			productReference = 3ABF17811A1486DA00F1C27D /* WLDownloader.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3ABF17921A1486DA00F1C27D /* MacAppTests */ = {
@@ -223,6 +331,12 @@
 			mainGroup = 3ABF17781A1486DA00F1C27D;
 			productRefGroup = 3ABF17821A1486DA00F1C27D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3A7ECF1B1A7B31D80058CE9E /* Products */;
+					ProjectRef = 3A7ECF1A1A7B31D80058CE9E /* XCDYouTubeKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3ABF17801A1486DA00F1C27D /* MacApp */,
@@ -230,6 +344,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3A7ECF231A7B31D80058CE9E /* libXCDYouTubeKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libXCDYouTubeKit.a;
+			remoteRef = 3A7ECF221A7B31D80058CE9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A7ECF251A7B31D80058CE9E /* XCDYouTubeKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = XCDYouTubeKit.framework;
+			remoteRef = 3A7ECF241A7B31D80058CE9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A7ECF271A7B31D80058CE9E /* XCDYouTubeKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = XCDYouTubeKit.framework;
+			remoteRef = 3A7ECF261A7B31D80058CE9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A7ECF291A7B31D80058CE9E /* XCDYouTubeKit iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "XCDYouTubeKit iOS Tests.xctest";
+			remoteRef = 3A7ECF281A7B31D80058CE9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A7ECF2B1A7B31D80058CE9E /* XCDYouTubeKit OS X Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "XCDYouTubeKit OS X Tests.xctest";
+			remoteRef = 3A7ECF2A1A7B31D80058CE9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3ABF177F1A1486DA00F1C27D /* Resources */ = {
@@ -256,12 +408,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5CF8901A7B573F00D5B45C /* AFSecurityPolicy.m in Sources */,
 				3A7260111A67661B00B38A37 /* models.swift in Sources */,
+				3A5CF88F1A7B573F00D5B45C /* AFNetworkReachabilityManager.m in Sources */,
 				3A0F0B411A63B883004ABA2A /* GTLCommon_Sources.m in Sources */,
+				3A5CF8911A7B573F00D5B45C /* AFURLConnectionOperation.m in Sources */,
+				3A5CF88C1A7B573F00D5B45C /* AFHTTPRequestOperation.m in Sources */,
+				3A5CF88E1A7B573F00D5B45C /* AFHTTPSessionManager.m in Sources */,
+				3A5CF8921A7B573F00D5B45C /* AFURLRequestSerialization.m in Sources */,
 				3ABF17891A1486DA00F1C27D /* ViewController.swift in Sources */,
+				3A5CF8941A7B573F00D5B45C /* AFURLSessionManager.m in Sources */,
 				3A72600F1A66467600B38A37 /* VideoCellView.swift in Sources */,
+				3A5CF88D1A7B573F00D5B45C /* AFHTTPRequestOperationManager.m in Sources */,
 				3A0F0B441A63BA5B004ABA2A /* GTLYouTube_Sources.m in Sources */,
+				3A5CF8931A7B573F00D5B45C /* AFURLResponseSerialization.m in Sources */,
 				3A4B47271A70A1B200A4EB05 /* ProgressCircleView.swift in Sources */,
+				3AC07E4A1A78D07200B38025 /* WLDDownloadManager.swift in Sources */,
 				3A0F0B421A63B883004ABA2A /* GTLNetworking_Sources.m in Sources */,
 				3ABF17871A1486DA00F1C27D /* AppDelegate.swift in Sources */,
 			);
@@ -379,10 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GTL-bdzhpeuoebcstkfoyhbvyfodgrpc/Build/Products/Debug",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -401,7 +560,7 @@
 				MTL_ENABLE_DEBUG_INFO = "";
 				OTHER_CFLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = "-Objc";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WLDownloader;
 				SWIFT_OBJC_BRIDGING_HEADER = "MacApp/GTM-Bridging-Header.h";
 			};
 			name = Debug;
@@ -411,10 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/GTL-bdzhpeuoebcstkfoyhbvyfodgrpc/Build/Products/Debug",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -433,7 +589,7 @@
 				MTL_ENABLE_DEBUG_INFO = "";
 				OTHER_CFLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = "-Objc";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WLDownloader;
 				SWIFT_OBJC_BRIDGING_HEADER = "MacApp/GTM-Bridging-Header.h";
 			};
 			name = Release;
